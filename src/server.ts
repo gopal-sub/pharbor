@@ -1,6 +1,9 @@
 import express from 'express';
 // import routes from routes
 import {credentialRouter} from './routes/credentialRouter.js';
+import {testDbConnection} from './initDabaseConnection.js'
+
+
 
 const server_port = 3000
 
@@ -11,6 +14,7 @@ app.use('/api/v1/accounts', credentialRouter);
 
 
 
-app.listen(server_port, ()=>{
+app.listen(server_port, async ()=>{
+    await testDbConnection()
     console.log(`server is running on port ${server_port}`)
 })

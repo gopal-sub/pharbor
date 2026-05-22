@@ -1,4 +1,5 @@
-import type {Request, Response} from 'express'
+import type {Request, Response} from 'express';
+
 
 export function createCredentials(req: Request, res: Response){
     try {
@@ -8,6 +9,8 @@ export function createCredentials(req: Request, res: Response){
         const notes = req.body.notes;
         const website = req.body.website;
         const expireFrequency = req.body.expireFrequency;
+
+
 
     } catch (e) {
         throw console.error(e);
