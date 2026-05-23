@@ -1,14 +1,30 @@
 import type {Request, Response} from 'express';
+import {createCredential} from '../services/credentialService.js'
 
 
-export function createCredentials(req: Request, res: Response){
+export async function createCredentials(req: Request, res: Response){
     try {
-        const title = req.body.title;
-        const email = req.body.email;
-        const password = req.body.password;
-        const notes = req.body.notes;
-        const website = req.body.website;
-        const expireFrequency = req.body.expireFrequency;
+        const now = new Date()
+        const expireOn = new Date(now)
+        expireOn.setMonth(expireOn.getMonth() + 6)
+
+        const creadential = {
+            title: req.body.title,
+            email: req.body.email,
+            password: req.body.password,
+            notes: req.body.notes,
+            website: req.body.website,
+            expireFrequency: req.body.expireFrequency,
+            userId: 1,
+            expireOn: expireOn,
+            createdOn: new Date(),
+            lastPasswordChange: new Date()
+        }
+
+
+        const createdCredential = await createCredential(creadential)
+        res.json(createdCredential)
+        return;
 
 
 

@@ -7,5 +7,7 @@ export type CredentialType = {
         expireFrequency : string
         expireOn: Date
         userId: number
+        createdOn: Date
+        lastPasswordChange: Date
 
 }

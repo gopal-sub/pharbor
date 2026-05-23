@@ -4,8 +4,7 @@ import {prisma} from '../initDabaseConnection.js';
 
 
 
-
-export async function createUser(user:UserType) {
+export async function createUserService(user:UserType) {
     try {
         const createdRecord = await prisma.user.create({
             data: {
@@ -18,6 +17,18 @@ export async function createUser(user:UserType) {
     } catch (e) {
         throw error(e)
 
+        
+    }
+}
+
+export async function findUserByEmail(email: string) {
+    try {
+        const user = prisma.user.findFirst({
+            where: { email: email },
+        });
+        return user
+    } catch (e) {
+        throw error(e)
         
     }
 }

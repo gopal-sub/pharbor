@@ -18,6 +18,7 @@ export async function createCredential(credential:CredentialType ) {
                         id: credential.userId
                     },
                 },
+                lastPasswordChange: credential.lastPasswordChange
 
             }
         });

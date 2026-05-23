@@ -1,4 +1,4 @@
-import { PrismaClient } from "./generated/prisma/index.js";
+import { PrismaClient } from "@prisma/client";
 import { error } from "node:console";
 
 export const prisma = new PrismaClient();
@@ -12,3 +12,4 @@ export async function testDbConnection() {
         
     }
 }
+
