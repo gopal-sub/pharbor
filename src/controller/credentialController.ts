@@ -76,7 +76,7 @@ export async function updateCredential_controller(req: Request, res:Response){
 }
 export async function deleteCredential_controller(req: Request, res:Response){
     try {
-        const credentialId = req.body.credentialId
+        const credentialId = Number(req.body.credentialId)
         const response  = await delete_credetial(credentialId)
         res.send(response)
         

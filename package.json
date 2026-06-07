@@ -15,11 +15,13 @@
     "@types/express": "^5.0.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "prisma": "^6.6.0",
     "typescript": "^6.0.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/express-session": "^1.19.0",
     "@types/node": "^25.9.1"
   }
 }

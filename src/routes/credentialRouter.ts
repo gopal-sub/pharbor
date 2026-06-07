@@ -1,6 +1,6 @@
 import express from 'express';
 import type {Request, Response} from 'express';
-import {createCredentials_controller, getCredentials_controller, updateCredential_controller} from '../controller/credentialController.js'
+import {createCredentials_controller, getCredentials_controller, updateCredential_controller, deleteCredential_controller} from '../controller/credentialController.js'
 
 // validate input
 import {userValidatorInputCreateCredential,userValidatorInputUpdateCredential} from '../middleware/credentialObjectValidator.js'
@@ -15,5 +15,4 @@ credentialRouter.post('/credential',userValidatorInputCreateCredential,createCre
 
 credentialRouter.patch('/credential', userValidatorInputUpdateCredential, updateCredential_controller);
 
-
-// credentialRouter.delete('/credential', );
+credentialRouter.delete('/credential', deleteCredential_controller);
